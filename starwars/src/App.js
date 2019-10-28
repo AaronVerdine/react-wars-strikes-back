@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
+import CharCard from "./components/CharCard";
+
 // Try to think through what state you'll need for this app before starting. Then build out
 // the state properties here.
 
@@ -10,22 +12,34 @@ import "./App.css";
 // sync up with, if any.
 
 const App = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://swapi.co/api/people/")
       .then(res => {
         console.log(res.data.results);
+        setData(res.data.results);
       })
       .catch(err => {
         console.log(err);
       });
-  });
+  }, []);
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <div className="state-data">
+        {data.map((data, index) => (
+          <CharCard
+            name={data.name}
+            DOB={data.birth_year}
+            gender={data.gender}
+            homeworld={data.homeworld}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   );
 };
