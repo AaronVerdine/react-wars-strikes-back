@@ -1,12 +1,32 @@
 import React from "react";
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Row,
+  Col
+} from "reactstrap";
 
 const CharCard = props => {
   return (
     <div className="props">
-      <h1>{props.name}</h1>
-      <h2>{props.birth_year}</h2>
-      <h3>{props.gender}</h3>
-      <h4>{props.homeworld}</h4>
+      <Row>
+        <Col sm="6">
+          <Card className="card-stylz">
+            <CardImg
+              className="catPics"
+              src="http://placekitten.com/200/300"
+              alt={props.name}
+            />
+            <CardBody>
+              <CardTitle>{props.name}</CardTitle>
+              <CardSubtitle>{props.gender}</CardSubtitle>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 };

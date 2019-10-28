@@ -33,9 +33,8 @@ const App = () => {
         {data.map((data, index) => (
           <CharCard
             name={data.name}
-            DOB={data.birth_year}
+            DOB={data.birthYear}
             gender={data.gender}
-            homeworld={data.homeworld}
             key={index}
           />
         ))}

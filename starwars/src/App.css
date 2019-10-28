@@ -6,7 +6,27 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+.state-data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
 
 .props {
-  color: white;
+  display: flex;
+}
+
+.card-stylz {
+  display: inline-flex;
+  width: 250px;
+  margin: 20%;
+  margin-left: auto;
+}
+
+.catPics {
+  height: 318px;
+  width: 100%;
+  object-fit: cover;
 }
